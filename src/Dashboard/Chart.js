@@ -7,17 +7,33 @@ const options = {
   chart: {
     height: '360px',
     type: 'column',
+    style: {
+      fontFamily: `'Blinker', sans-serif`,
+    },
   },
   title: {
-    text: 'Stacked column chart',
+    text: 'Revenue by Product',
   },
   xAxis: {
-    categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas'],
+    categories: [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ],
   },
   yAxis: {
     min: 0,
     title: {
-      text: 'Total fruit consumption',
+      text: 'Billions of Dollars',
     },
     stackLabels: {
       enabled: true,
@@ -48,6 +64,9 @@ const options = {
     pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}',
   },
   plotOptions: {
+    series: {
+      borderWidth: 0,
+    },
     column: {
       stacking: 'normal',
       dataLabels: {
@@ -57,16 +76,24 @@ const options = {
   },
   series: [
     {
-      name: 'John',
+      name: 'Phones',
       data: [5, 3, 4, 7, 2],
+      color: '#CAF0F8',
     },
     {
-      name: 'Jane',
+      name: 'Services',
       data: [2, 2, 3, 2, 1],
+      color: '#00B4D8',
     },
     {
-      name: 'Joe',
+      name: 'Laptops',
       data: [3, 4, 4, 2, 5],
+      color: '#0077B6',
+    },
+    {
+      name: 'Tablets',
+      data: [3, 2, 3, 1, 5],
+      color: '#03045E',
     },
   ],
 };
