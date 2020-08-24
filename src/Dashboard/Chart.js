@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from './Card';
+import { chartData } from './Data';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
@@ -32,6 +33,7 @@ const options = {
   },
   yAxis: {
     min: 0,
+    reversedStacks: false,
     title: {
       text: 'Billions of Dollars',
     },
@@ -74,28 +76,7 @@ const options = {
       },
     },
   },
-  series: [
-    {
-      name: 'Phones',
-      data: [5, 3, 4, 7, 2],
-      color: '#CAF0F8',
-    },
-    {
-      name: 'Services',
-      data: [2, 2, 3, 2, 1],
-      color: '#00B4D8',
-    },
-    {
-      name: 'Laptops',
-      data: [3, 4, 4, 2, 5],
-      color: '#0077B6',
-    },
-    {
-      name: 'Tablets',
-      data: [3, 2, 3, 1, 5],
-      color: '#03045E',
-    },
-  ],
+  series: chartData,
 };
 
 export function Chart() {
