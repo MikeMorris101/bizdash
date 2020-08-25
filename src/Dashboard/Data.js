@@ -32,3 +32,31 @@ export const chartData = [
     color: '#CAF0F8',
   },
 ];
+
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+function format(num) {
+  return `$${num} Billion`;
+}
+export const tableRows = months.map((month, i) => ({
+  month,
+  phones: format(chartData[0].data[i]),
+  services: format(chartData[1].data[i]),
+  laptops: format(chartData[2].data[i]),
+  tablets: format(chartData[3].data[i]),
+}));
+
+console.log(tableRows);
